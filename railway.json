@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "python manage.py migrate && python manage.py runserver",
+    "startCommand": "python manage.py migrate && gunicorn --timeout 500 buttonshift_be.wsgi",
     "restartPolicyType": "NEVER",
     "restartPolicyMaxRetries": 10
   }
